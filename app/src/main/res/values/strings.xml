@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IzgubljenoNadjeno</string>
+    <string name="action_settings">Settings</string>
+    <string name="stvar_hint">Unesite naziv stvari</string>
+    <string name="stvar_naslov">Naziv stvari</string>
+    <string name="stvar_detalji_pronalaska">Detalji pronalaska</string>
+    <string name="stvar_lokacija">Lokacija</string>
+    <string name="stvar_ime_korisnika">Ime korisnika</string>
+    <string name="stvar_kontakt_korisnika">Kontakt</string>
+    <string name="title_activity_stvar_list">StvarListActivity</string>
+</resources>
