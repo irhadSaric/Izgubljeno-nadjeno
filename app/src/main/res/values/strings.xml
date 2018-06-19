@@ -8,4 +8,10 @@
     <string name="stvar_ime_korisnika">Ime korisnika</string>
     <string name="stvar_kontakt_korisnika">Kontakt</string>
     <string name="title_activity_stvar_list">StvarListActivity</string>
+    <string name="datum_picker_naslov">Odaberite datum</string>
+
+    <string name="nova_stvar">Nova stvar</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d stvari</string>
 </resources>

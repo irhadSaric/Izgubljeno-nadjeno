@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,11 +24,13 @@ public class MainActivity extends SingleFragmentActivity {
     public static Intent newIntent(Context packageContext, UUID stvarId) {
         Intent intent = new Intent(packageContext, MainActivity.class);
         intent.putExtra(EXTRA_STVAR_ID, stvarId);
+        Log.d("filter", "Uso");
         return intent;
     }
 
     @Override
     protected Fragment createFragment() {
+        Log.d("filter", "Uso");
         UUID stvarId = (UUID) getIntent().getSerializableExtra(EXTRA_STVAR_ID);
         return StvarFragment.newInstance(stvarId);
     }

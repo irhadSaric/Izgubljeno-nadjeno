@@ -1,5 +1,12 @@
 package com.example.user.izgubljenonadjeno;
 
+import android.util.Log;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Month;
+import java.time.Year;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
@@ -11,13 +18,46 @@ public class Stvar {
     private UUID ID;
     private String nazivStvari;
     private Date datum;
-    private String lokacija;
+    private String lokacijaPronalaska;
+    private String lokacijaKorisnika;
+    private boolean izgubljeno;
     private String kontaktTelefon;
     private String imeKorisnika;
 
+
     public Stvar() {
-        this.ID = UUID.randomUUID();
-        this.datum = new Date();
+        this(UUID.randomUUID());
+    }
+
+    public Stvar(UUID uuid) {
+        ID = uuid;
+        datum = Calendar.getInstance().getTime();
+    }
+
+    public String getImeSlike(){ return "IMG_" + getID().toString() + ".jpg";}
+
+    public boolean getIzgubljeno() {
+        return izgubljeno;
+    }
+
+    public void setIzgubljeno(boolean izgubljeno) {
+        this.izgubljeno = izgubljeno;
+    }
+
+    public String getLokacijaPronalaska() {
+        return lokacijaPronalaska;
+    }
+
+    public void setLokacijaPronalaska(String lokacijaPronalaska) {
+        this.lokacijaPronalaska = lokacijaPronalaska;
+    }
+
+    public String getLokacijaKorisnika() {
+        return lokacijaKorisnika;
+    }
+
+    public void setLokacijaKorisnika(String lokacijaKorisnika) {
+        this.lokacijaKorisnika = lokacijaKorisnika;
     }
 
     public UUID getID() {
@@ -42,14 +82,6 @@ public class Stvar {
 
     public void setDatum(Date datum) {
         this.datum = datum;
-    }
-
-    public String getLokacija() {
-        return lokacija;
-    }
-
-    public void setLokacija(String lokacija) {
-        this.lokacija = lokacija;
     }
 
     public String getKontaktTelefon() {

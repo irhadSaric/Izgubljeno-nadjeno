@@ -5,17 +5,52 @@
     android:layout_margin="16dp"
     android:orientation="vertical">
 
-    <TextView
-        style="?android:listSeparatorTextViewStyle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stvar_naslov"/>
+        android:orientation="horizontal">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/stvar_slika"
+                android:scaleType="centerInside"
+                android:cropToPadding="true"
+                android:background="@color/colorPrimaryDark"/>
 
-    <EditText
-        android:id="@+id/naziv_stvari"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/stvar_hint"/>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/stvar_kamera"
+                android:background="@android:drawable/ic_menu_camera"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stvar_naslov"/>
+
+            <EditText
+                android:id="@+id/naziv_stvari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/stvar_hint"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         style="?android:listSeparatorTextViewStyle"
@@ -27,24 +62,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stvar_lokacija"/>
+        android:id="@+id/lokacija_pronalaska"
+        android:text="@string/stvar_lokacija"
+        android:hint="Unesite lokaciju pronalaska/gubljenja stvari"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stvar_kontakt_korisnika"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/stvar_lokacija"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/kontakt"
+            android:text="@string/stvar_kontakt_korisnika"
+            android:hint="Kontakt"/>
 
-    <TextView
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pozovi"
+            android:text="Pozovi"/>
+
+    </LinearLayout>
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stvar_ime_korisnika"/>
+        android:text="@string/stvar_lokacija"
+        android:id="@+id/lokacija_korisnika"
+        android:hint="Vaša lokacija"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stvar_ime_korisnika"
+        android:id="@+id/ime_korisnika"
+        android:hint="Ime i prezime"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Izgubljeno"
+        android:id="@+id/izgubljeno_radio"/>
 
 </LinearLayout>
