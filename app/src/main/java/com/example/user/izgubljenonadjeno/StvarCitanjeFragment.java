@@ -38,6 +38,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -48,7 +49,7 @@ public class StvarCitanjeFragment extends Fragment {
     private Stvar mStvar;
     private ImageView mSlika;
     private File mFajlSlika;
-    private Button mDugmeZaPoziv;
+    private ImageButton mDugmeZaPoziv;
 
     private static final String ARG_STVAR_ID = "stvar_id";
     private static final int REQUEST_PERMISSION_POZIV = 1;
@@ -121,7 +122,7 @@ public class StvarCitanjeFragment extends Fragment {
         TextView lokacijaKorisnika = (TextView) v.findViewById(R.id.lokacija_korisnika);
         TextView imeKorisnika = (TextView) v.findViewById(R.id.ime_korisnika);
         TextView datum = (TextView) v.findViewById(R.id.datum_pronalaska);
-        mDugmeZaPoziv = (Button) v.findViewById(R.id.pozovi);
+        mDugmeZaPoziv = (ImageButton) v.findViewById(R.id.pozovi);
 
         mSlika = (ImageView) v.findViewById(R.id.stvar_slika);
         updatePhotoView();
@@ -133,13 +134,14 @@ public class StvarCitanjeFragment extends Fragment {
         kontakt.setText(mStvar.getKontaktTelefon());
         lokacijaKorisnika.setText(mStvar.getLokacijaKorisnika());
         imeKorisnika.setText(mStvar.getImeKorisnika());
-        izgubljeno.setChecked(mStvar.getIzgubljeno() == 1);
+        izgubljeno.setChecked(new String("jeste").equals(mStvar.getIzgubljeno()));
         datum.setText(mStvar.getDatum().toString());
 
         mDugmeZaPoziv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 zovni();
+                //Toast.makeText(getContext(), mStvar.getIzgubljeno(), Toast.LENGTH_SHORT).show();
             }
         });
 

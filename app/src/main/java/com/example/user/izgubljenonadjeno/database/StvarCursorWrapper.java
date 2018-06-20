@@ -23,7 +23,7 @@ public class StvarCursorWrapper extends CursorWrapper {
         long date = getLong(getColumnIndex(StvarDbShema.StvarTable.Cols.DATUM));
         String lokacijaPronalaska = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.LOKACIJA_PRONALASKA));
         String lokacijaKorisnika = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.LOKACIJA_KORISNIKA));
-        int izgubljeno = getInt(getColumnIndex(StvarDbShema.StvarTable.Cols.IZGUBLJENO));
+        String izgubljeno = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.IZGUBLJENO));
         String kontaktTelefon = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.KONTAKT));
         String imeKorisnika = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.IME));
 

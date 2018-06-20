@@ -32,10 +32,20 @@ public class StvarListActivity extends SingleFragmentActivity implements StvarLi
                 startActivity(intent);
             }
         } else {
-            Fragment newDetail = StvarCitanjeFragment.newInstance(stvar.getID());
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.detail_fragment_container, newDetail)
-                    .commit();
+            if(citanje)
+            {
+                Fragment newDetail = StvarCitanjeFragment.newInstance(stvar.getID());
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.detail_fragment_container, newDetail)
+                        .commit();
+            }
+            else
+            {
+                Fragment newDetail = StvarFragment.newInstance(stvar.getID());
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.detail_fragment_container, newDetail)
+                        .commit();
+            }
         }
     }
 

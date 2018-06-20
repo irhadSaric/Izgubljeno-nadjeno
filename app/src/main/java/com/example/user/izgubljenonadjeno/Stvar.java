@@ -20,7 +20,7 @@ public class Stvar {
     private Date datum;
     private String lokacijaPronalaska;
     private String lokacijaKorisnika;
-    private int izgubljeno;
+    private String izgubljeno;
     private String kontaktTelefon;
     private String imeKorisnika;
 
@@ -32,15 +32,16 @@ public class Stvar {
     public Stvar(UUID uuid) {
         ID = uuid;
         datum = Calendar.getInstance().getTime();
+        izgubljeno = "nadjeno";
     }
 
     public String getImeSlike(){ return "IMG_" + getID().toString() + ".jpg";}
 
-    public int getIzgubljeno() {
+    public String getIzgubljeno() {
         return izgubljeno;
     }
 
-    public void setIzgubljeno(int izgubljeno) {
+    public void setIzgubljeno(String izgubljeno) {
         this.izgubljeno = izgubljeno;
     }
 

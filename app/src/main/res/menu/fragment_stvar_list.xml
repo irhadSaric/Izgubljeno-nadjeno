@@ -9,4 +9,10 @@
     <item
         android:id="@+id/izgubljene_stvari"
         android:title="Izgubljeno"/>
+    <item
+        android:id="@+id/nadjene_stvari"
+        android:title="Nađeno"/>
+    <item
+        android:id="@+id/sve_stvari"
+        android:title="Sve"/>
 </menu>

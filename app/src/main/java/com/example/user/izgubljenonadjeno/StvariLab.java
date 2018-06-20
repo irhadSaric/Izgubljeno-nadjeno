@@ -99,7 +99,7 @@ public class StvariLab {
     public List<Stvar> getIzgubljene(){
         List<Stvar> stvari = new ArrayList<>();
         StvarCursorWrapper cursor = queryStvari(StvarDbShema.StvarTable.Cols.IZGUBLJENO+"=?",
-                new String[]{"1"});
+                new String[]{"jeste"});
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()){
@@ -112,6 +112,24 @@ public class StvariLab {
         }
         return stvari;
     }
+
+    public List<Stvar> getNadjene(){
+        List<Stvar> stvari = new ArrayList<>();
+        StvarCursorWrapper cursor = queryStvari(StvarDbShema.StvarTable.Cols.IZGUBLJENO+"=?",
+                new String[]{"nadjeno"});
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()){
+                stvari.add(cursor.getStvar());
+                cursor.moveToNext();
+            }
+        }
+        finally {
+            cursor.close();
+        }
+        return stvari;
+    }
+
 
     public Stvar getStvar(UUID id) {
         StvarCursorWrapper cursor = queryStvari(

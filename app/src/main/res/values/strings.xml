@@ -4,9 +4,9 @@
     <string name="stvar_hint">Unesite naziv stvari</string>
     <string name="stvar_naslov">Naziv stvari</string>
     <string name="stvar_detalji_pronalaska">Detalji pronalaska</string>
-    <string name="stvar_lokacija">Lokacija</string>
+    <string name="stvar_lokacija">Lokacija: </string>
     <string name="stvar_ime_korisnika">Ime korisnika</string>
-    <string name="stvar_kontakt_korisnika">Kontakt</string>
+    <string name="stvar_kontakt_korisnika">Kontakt: </string>
     <string name="title_activity_stvar_list">StvarListActivity</string>
     <string name="datum_picker_naslov">Odaberite datum</string>
 
@@ -14,4 +14,5 @@
     <string name="show_subtitle">Show Subtitle</string>
     <string name="hide_subtitle">Hide Subtitle</string>
     <string name="subtitle_format">%1$d stvari</string>
+    <string name="datum_placeholder">Datum:</string>
 </resources>

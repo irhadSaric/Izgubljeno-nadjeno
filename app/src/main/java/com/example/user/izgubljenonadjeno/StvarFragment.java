@@ -194,7 +194,7 @@ public class StvarFragment extends Fragment {
         kontakt.setText(mStvar.getKontaktTelefon());
         lokacijaKorisnika.setText(mStvar.getLokacijaKorisnika());
         imeKorisnika.setText(mStvar.getImeKorisnika());
-        izgubljeno.setChecked(mStvar.getIzgubljeno() == 1);
+        izgubljeno.setChecked(new String("jeste").equals(mStvar.getIzgubljeno()));
 
         /***********************************************************************/
 
@@ -246,7 +246,8 @@ public class StvarFragment extends Fragment {
         izgubljeno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mStvar.setIzgubljeno(1);
+                mStvar.setIzgubljeno("jeste");
+                updateStvar();
             }
         });
 

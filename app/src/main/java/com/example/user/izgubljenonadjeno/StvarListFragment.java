@@ -34,6 +34,7 @@ public class StvarListFragment extends Fragment{
     private Callbacks mCallbacks;
     private boolean izgubljeno;
     private boolean nadjeno;
+    private boolean sve;
 
     /**
      * Required interface for hosting activities
@@ -75,6 +76,14 @@ public class StvarListFragment extends Fragment{
                 izgubljeno = true;
                 updateUI();
                 return true;
+            case R.id.nadjene_stvari:
+                nadjeno = true;
+                updateUI();
+                return true;
+            case R.id.sve_stvari:
+                sve = true;
+                updateUI();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -108,6 +117,20 @@ public class StvarListFragment extends Fragment{
         StvariLab stvariLab = StvariLab.get(getActivity());
 
         List<Stvar> stvari = stvariLab.getStvari();
+
+        if(izgubljeno){
+            stvari = stvariLab.getIzgubljene();
+            izgubljeno = false;
+        }
+        if(nadjeno){
+            stvari = stvariLab.getNadjene();
+            nadjeno = false;
+        }
+        if(sve){
+            stvari = stvariLab.getStvari();
+            sve = false;
+        }
+
 
         if (mAdapter == null) {
             mAdapter = new StvarAdapter(stvari);
