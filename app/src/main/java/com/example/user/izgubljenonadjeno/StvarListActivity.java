@@ -19,12 +19,20 @@ public class StvarListActivity extends SingleFragmentActivity implements StvarLi
     }
 
     @Override
-    public void onStvarSelected(Stvar stvar) {
+    public void onStvarSelected(Stvar stvar, boolean citanje) {
         if (findViewById(R.id.detail_fragment_container) == null) {
-            Intent intent = StvarPagerActivity.newIntent(this, stvar.getID());
-            startActivity(intent);
+            if(citanje)
+            {
+                Intent intent = StvarCitanjePagerActivity.newIntent(this, stvar.getID());
+                startActivity(intent);
+            }
+            else
+            {
+                Intent intent = DodavanjeStvariActivity.newIntent(this, stvar.getID());
+                startActivity(intent);
+            }
         } else {
-            Fragment newDetail = StvarFragment.newInstance(stvar.getID());
+            Fragment newDetail = StvarCitanjeFragment.newInstance(stvar.getID());
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.detail_fragment_container, newDetail)
                     .commit();

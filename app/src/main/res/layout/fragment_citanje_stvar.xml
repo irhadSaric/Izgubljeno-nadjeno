@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/stvar_slika"
+                android:scaleType="centerInside"
+                android:cropToPadding="true"
+                android:background="@color/colorPrimaryDark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stvar_naslov"/>
+
+            <TextView
+                android:id="@+id/naziv_stvari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/stvar_hint"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stvar_detalji_pronalaska"/>
+    <TextView
+        android:id="@+id/datum_pronalaska"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lokacija_pronalaska"
+        android:text="@string/stvar_lokacija"
+        android:hint="Unesite lokaciju pronalaska/gubljenja stvari"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/kontakt"
+            android:text="@string/stvar_kontakt_korisnika"
+            android:hint="Kontakt"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pozovi"
+            android:text="Pozovi"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stvar_lokacija"
+        android:id="@+id/lokacija_korisnika"
+        android:hint="Vaša lokacija"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stvar_ime_korisnika"
+        android:id="@+id/ime_korisnika"
+        android:hint="Ime i prezime"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Izgubljeno"
+        android:id="@+id/izgubljeno_radio"
+        android:clickable="false"/>
+
+</LinearLayout>

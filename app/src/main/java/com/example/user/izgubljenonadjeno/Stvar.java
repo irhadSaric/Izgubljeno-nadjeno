@@ -20,7 +20,7 @@ public class Stvar {
     private Date datum;
     private String lokacijaPronalaska;
     private String lokacijaKorisnika;
-    private boolean izgubljeno;
+    private int izgubljeno;
     private String kontaktTelefon;
     private String imeKorisnika;
 
@@ -36,11 +36,11 @@ public class Stvar {
 
     public String getImeSlike(){ return "IMG_" + getID().toString() + ".jpg";}
 
-    public boolean getIzgubljeno() {
+    public int getIzgubljeno() {
         return izgubljeno;
     }
 
-    public void setIzgubljeno(boolean izgubljeno) {
+    public void setIzgubljeno(int izgubljeno) {
         this.izgubljeno = izgubljeno;
     }
 

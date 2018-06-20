@@ -2,6 +2,8 @@ package com.example.user.izgubljenonadjeno;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,9 +16,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -28,12 +32,14 @@ public class StvarListFragment extends Fragment{
     private RecyclerView mStvarRecyclerView;
     private StvarAdapter mAdapter;
     private Callbacks mCallbacks;
+    private boolean izgubljeno;
+    private boolean nadjeno;
 
     /**
      * Required interface for hosting activities
      */
     public interface Callbacks {
-        void onStvarSelected(Stvar stvar);
+        void onStvarSelected(Stvar stvar, boolean citanje);
     }
 
     @Override
@@ -63,7 +69,11 @@ public class StvarListFragment extends Fragment{
                 Stvar stvar = new Stvar();
                 StvariLab.get(getActivity()).dodajStvar(stvar);
                 updateUI();
-                mCallbacks.onStvarSelected(stvar);
+                mCallbacks.onStvarSelected(stvar, false);
+                return true;
+            case R.id.izgubljene_stvari:
+                izgubljeno = true;
+                updateUI();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -95,9 +105,8 @@ public class StvarListFragment extends Fragment{
     }
 
     public void updateUI() {
-
-        Log.d("filter", "hahu");
         StvariLab stvariLab = StvariLab.get(getActivity());
+
         List<Stvar> stvari = stvariLab.getStvari();
 
         if (mAdapter == null) {
@@ -113,12 +122,21 @@ public class StvarListFragment extends Fragment{
     private class StvarHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mNazivStvari;
         private TextView mDatum;
+        private ImageView mSlikica;
         private Stvar mStvar;
 
         public void bind(Stvar stvar) {
             mStvar = stvar;
             mNazivStvari.setText(mStvar.getNazivStvari());
             mDatum.setText(mStvar.getDatum().toString());
+            File slikaFajl = StvariLab.get(getContext()).getSlika(mStvar);
+
+            if (slikaFajl == null || !slikaFajl.exists()) {
+                mSlikica.setImageResource(R.mipmap.ic_upitnik);
+            } else {
+                Bitmap bitmap = PictureUtils.getScaledBitmap(slikaFajl.getPath(), getActivity());
+                mSlikica.setImageBitmap(bitmap);
+            }
         }
 
         public StvarHolder(LayoutInflater inflater, ViewGroup parent) {
@@ -126,10 +144,11 @@ public class StvarListFragment extends Fragment{
             itemView.setOnClickListener(this);
             mNazivStvari = (TextView) itemView.findViewById(R.id.stvar_naziv);
             mDatum = (TextView) itemView.findViewById(R.id.stvar_datum);
+            mSlikica = (ImageView) itemView.findViewById(R.id.mala_slika);
         }
 
         public void onClick(View view) {
-            mCallbacks.onStvarSelected(mStvar);
+            mCallbacks.onStvarSelected(mStvar, true);
         }
     }
 

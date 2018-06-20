@@ -6,4 +6,7 @@
         android:icon="@drawable/ic_menu_nova_stvar"
         android:title="@string/nova_stvar"
         app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/izgubljene_stvari"
+        android:title="Izgubljeno"/>
 </menu>

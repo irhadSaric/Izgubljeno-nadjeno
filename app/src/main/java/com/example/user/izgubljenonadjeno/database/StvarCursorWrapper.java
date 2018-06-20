@@ -27,15 +27,15 @@ public class StvarCursorWrapper extends CursorWrapper {
         String kontaktTelefon = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.KONTAKT));
         String imeKorisnika = getString(getColumnIndex(StvarDbShema.StvarTable.Cols.IME));
 
-        Stvar crime = new Stvar(UUID.fromString(uuidString));
-        crime.setNazivStvari(nazivStvari);
-        crime.setDatum(new Date(date));
-        crime.setLokacijaPronalaska(lokacijaPronalaska);
-        crime.setLokacijaKorisnika(lokacijaKorisnika);
-        crime.setKontaktTelefon(kontaktTelefon);
-        crime.setImeKorisnika(imeKorisnika);
-        crime.setIzgubljeno(izgubljeno != 0);
+        Stvar stvar = new Stvar(UUID.fromString(uuidString));
+        stvar.setNazivStvari(nazivStvari);
+        stvar.setDatum(new Date(date));
+        stvar.setLokacijaPronalaska(lokacijaPronalaska);
+        stvar.setLokacijaKorisnika(lokacijaKorisnika);
+        stvar.setKontaktTelefon(kontaktTelefon);
+        stvar.setImeKorisnika(imeKorisnika);
+        stvar.setIzgubljeno(izgubljeno);
 
-        return crime;
+        return stvar;
     }
 }
