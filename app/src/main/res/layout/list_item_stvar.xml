@@ -27,7 +27,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/stvar_naziv"
-            android:text="Naziv stvari"/>
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stvar_sta_je"
+            android:textSize="15dp"
+            android:textColor="@color/colorPrimary"/>
 
         <TextView
             android:layout_width="wrap_content"

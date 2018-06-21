@@ -36,13 +36,20 @@
                 style="?android:listSeparatorTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="-5dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/stvar_naslov"/>
 
             <TextView
                 android:id="@+id/naziv_stvari"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_vertical"
                 android:textSize="20dp"
                 android:layout_marginLeft="5dp"
                 android:hint="@string/stvar_hint"/>
@@ -55,7 +62,10 @@
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="-10dp"
         android:layout_margin="10dp"
         android:text="@string/stvar_detalji_pronalaska"/>
@@ -74,6 +84,11 @@
         <TextView
             android:id="@+id/datum_pronalaska"
             android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_vertical"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
@@ -92,6 +107,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
             android:id="@+id/lokacija_pronalaska" />
 
     </LinearLayout>
@@ -112,10 +132,12 @@
             android:id="@+id/kontakt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="7dp"
-            android:layout_marginLeft="35dp"/>
+            android:layout_marginLeft="45dp"/>
 
         <ImageButton
             android:id="@+id/pozovi"
@@ -142,6 +164,9 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/lokacija_korisnika" />
 
     </LinearLayout>
@@ -161,6 +186,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/ime_korisnika" />
 
     </LinearLayout>
@@ -172,6 +202,8 @@
         android:textColor="@color/colorPrimary"
         android:shadowColor="@color/colorPrimary"
         android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="25dp"
         android:id="@+id/izgubljeno_radio"
         android:clickable="false"/>
 

@@ -45,13 +45,11 @@ public class StvarFragment extends Fragment {
     private ImageButton mDugmeZaSliku;
     private ImageView mSlika;
     private File mFajlSlika;
-    private Button mDugmeZaPoziv;
 
     private static final String ARG_STVAR_ID = "stvar_id";
     private static final String DIALOG_DATUM = "DialogDatum";
     private static final int REQUEST_DATUM = 0;
     private static final int REQUEST_PHOTO = 2;
-    private static final int REQUEST_PERMISSION_POZIV = 1;
 
     private Callbacks mCallbacks;
     /**
@@ -139,37 +137,6 @@ public class StvarFragment extends Fragment {
         mDatum.setText(mStvar.getDatum().toString());
     }
 
-
-    private void zovni(){
-        String broj = mStvar.getKontaktTelefon().toString();
-        if(broj.length() > 0){
-            if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) !=
-                    PackageManager.PERMISSION_GRANTED){
-                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PERMISSION_POZIV);
-            }
-            else
-            {
-                String pozvati = "tel:" + broj;
-                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(pozvati)));
-            }
-        }
-        else{
-            Toast.makeText(getContext(), "Unesite kontakt telefon", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == REQUEST_PERMISSION_POZIV){
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                zovni();
-            }
-            else {
-                Toast.makeText(getContext(), "Nemate dozvolu za pozive", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -181,7 +148,6 @@ public class StvarFragment extends Fragment {
         final EditText kontakt = (EditText) v.findViewById(R.id.kontakt);
         EditText lokacijaKorisnika = (EditText) v.findViewById(R.id.lokacija_korisnika);
         EditText imeKorisnika = (EditText) v.findViewById(R.id.ime_korisnika);
-        mDugmeZaPoziv = (Button) v.findViewById(R.id.pozovi);
 
         mDugmeZaSliku = (ImageButton) v.findViewById(R.id.stvar_kamera);
         mSlika = (ImageView) v.findViewById(R.id.stvar_slika);
@@ -221,26 +187,6 @@ public class StvarFragment extends Fragment {
         });
 
         /***************************************************************************/
-
-        mDugmeZaPoziv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zovni();
-                /*Intent callIntent = new Intent(Intent.ACTION_CALL);
-                String brojTelefona = "";
-                brojTelefona = "tel:" + mStvar.getKontaktTelefon();
-                //Toast.makeText(getContext(), brojTelefona, Toast.LENGTH_SHORT).show();
-
-                callIntent.setData(Uri.parse(brojTelefona));
-
-                if (ActivityCompat.checkSelfPermission(getContext(),
-                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(getContext(), brojTelefona, Toast.LENGTH_SHORT).show();
-                }
-                startActivity(callIntent);*/
-            }
-        });
-
         /***************************************************************************/
 
         izgubljeno.setOnClickListener(new View.OnClickListener() {

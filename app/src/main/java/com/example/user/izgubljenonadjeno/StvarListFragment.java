@@ -145,6 +145,7 @@ public class StvarListFragment extends Fragment{
     private class StvarHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mNazivStvari;
         private TextView mDatum;
+        private TextView mStaJe;
         private ImageView mSlikica;
         private Stvar mStvar;
 
@@ -152,10 +153,18 @@ public class StvarListFragment extends Fragment{
             mStvar = stvar;
             mNazivStvari.setText(mStvar.getNazivStvari());
             mDatum.setText(mStvar.getDatum().toString());
+            if(new String("jeste").equals(mStvar.getIzgubljeno())) {
+                mStaJe.setText(getResources().getString(R.string.izgubljeno_string));
+                mStaJe.setTextColor(getResources().getColor(R.color.crvena));
+            }
+            else {
+                mStaJe.setText(getResources().getString(R.string.nadjeno_string));
+                mStaJe.setTextColor(getResources().getColor(R.color.zelena));
+            }
             File slikaFajl = StvariLab.get(getContext()).getSlika(mStvar);
 
             if (slikaFajl == null || !slikaFajl.exists()) {
-                mSlikica.setImageResource(R.mipmap.ic_upitnik);
+                mSlikica.setImageResource(R.drawable.ic_upitnik);
             } else {
                 Bitmap bitmap = PictureUtils.getScaledBitmap(slikaFajl.getPath(), getActivity());
                 mSlikica.setImageBitmap(bitmap);
@@ -168,6 +177,7 @@ public class StvarListFragment extends Fragment{
             mNazivStvari = (TextView) itemView.findViewById(R.id.stvar_naziv);
             mDatum = (TextView) itemView.findViewById(R.id.stvar_datum);
             mSlikica = (ImageView) itemView.findViewById(R.id.mala_slika);
+            mStaJe = (TextView) itemView.findViewById(R.id.stvar_sta_je);
         }
 
         public void onClick(View view) {

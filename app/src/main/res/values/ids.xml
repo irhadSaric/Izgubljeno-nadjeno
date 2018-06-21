@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="unesi_broj" type="id">Morate unijeti broj</item>
+    <item name="dozvola_za_poziv" type="id">Nemate dozvolu za pozive</item>
+    <item name="izgubljeno_string" type="id">Izgubljeno</item>
+</resources>

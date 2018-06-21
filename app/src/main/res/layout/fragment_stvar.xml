@@ -8,24 +8,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            
+
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
                 android:id="@+id/stvar_slika"
                 android:scaleType="centerInside"
                 android:cropToPadding="true"
                 android:background="@color/colorPrimaryDark"/>
 
             <ImageButton
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:id="@+id/stvar_kamera"
                 android:background="@android:drawable/ic_menu_camera"
                 />
@@ -34,18 +36,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
 
             <TextView
                 style="?android:listSeparatorTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="-5dp"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/stvar_naslov"/>
 
             <EditText
                 android:id="@+id/naziv_stvari"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_vertical"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
                 android:hint="@string/stvar_hint"/>
 
         </LinearLayout>
@@ -56,6 +69,12 @@
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="-10dp"
+        android:layout_margin="10dp"
         android:text="@string/stvar_detalji_pronalaska"/>
     <Button
         android:id="@+id/datum_pronalaska"
@@ -65,9 +84,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
         android:id="@+id/lokacija_pronalaska"
-        android:text="@string/stvar_lokacija"
-        android:hint="Unesite lokaciju pronalaska/gubljenja stvari"/>
+        android:hint="@string/stvar_lokacija"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -75,38 +98,49 @@
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/kontakt"
-            android:text="@string/stvar_kontakt_korisnika"
-            android:hint="Kontakt"/>
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pozovi"
-            android:text="Pozovi"/>
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:hint="Broj telefona"/>
 
     </LinearLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stvar_lokacija"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/lokacija_korisnika"
         android:hint="Vaša lokacija"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stvar_ime_korisnika"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/ime_korisnika"
-        android:hint="Ime i prezime"/>
+        android:hint="Vaše ime"/>
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Izgubljeno"
-        android:id="@+id/izgubljeno_radio"/>
+        android:textColor="@color/colorPrimary"
+        android:shadowColor="@color/colorPrimary"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="25dp"
+        android:id="@+id/izgubljeno_radio" />
 
 </LinearLayout>
