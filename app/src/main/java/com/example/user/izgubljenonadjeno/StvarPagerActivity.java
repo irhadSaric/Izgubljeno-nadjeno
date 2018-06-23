@@ -13,7 +13,7 @@ import android.util.Log;
 import java.util.List;
 import java.util.UUID;
 
-public class StvarPagerActivity extends AppCompatActivity implements StvarFragment.Callbacks{
+public class StvarPagerActivity extends AppCompatActivity{
     private ViewPager mViewPager;
     private List<Stvar> mStvari;
     private static final String EXTRA_STVAR_ID ="com.example.user.izgubljenonadjeno.stvar_id";
@@ -22,10 +22,6 @@ public class StvarPagerActivity extends AppCompatActivity implements StvarFragme
         Intent intent = new Intent(packageContext, StvarPagerActivity.class);
         intent.putExtra(EXTRA_STVAR_ID, stvarId);
         return intent;
-    }
-
-    @Override
-    public void onStvarUpdated(Stvar stvar) {
     }
 
     @Override

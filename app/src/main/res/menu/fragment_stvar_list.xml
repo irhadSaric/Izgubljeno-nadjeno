@@ -8,14 +8,14 @@
         app:showAsAction="ifRoom|withText"/>
     <item
         android:id="@+id/nadjene_stvari"
-        android:title="Nađeno"
+        android:title="@string/nadjeno_string"
         app:showAsAction="ifRoom|withText"/>
     <item
         android:id="@+id/izgubljene_stvari"
-        android:title="Izgubljeno"
+        android:title="@string/izgubljeno_string"
         app:showAsAction="ifRoom|withText"/>
     <item
         android:id="@+id/sve_stvari"
-        android:title="Sve"
+        android:title="@string/sve"
         app:showAsAction="ifRoom|withText"/>
 </menu>

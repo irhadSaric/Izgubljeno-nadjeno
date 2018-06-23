@@ -94,7 +94,7 @@ public class StvarCitanjeFragment extends Fragment {
             }
         }
         else{
-            Toast.makeText(getContext(), getResources().getString(R.id.unesi_broj), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getResources().getString(R.string.unesi_broj), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -105,7 +105,7 @@ public class StvarCitanjeFragment extends Fragment {
                 zovni();
             }
             else {
-                Toast.makeText(getContext(), getResources().getString(R.id.dozvola_za_poziv), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getResources().getString(R.string.dozvola_za_poziv), Toast.LENGTH_SHORT).show();
             }
         }
     }

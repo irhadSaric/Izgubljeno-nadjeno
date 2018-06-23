@@ -13,4 +13,7 @@
     <string name="datum_placeholder">Datum:</string>
     <string name="izgubljeno_string">Izgubljeno</string>
     <string name="nadjeno_string">Nađeno</string>
+    <string name="sve">Sve</string>
+    <string name="unesi_broj">Unesite broj</string>
+    <string name="dozvola_za_poziv">Nemate dozvolu za poziv</string>
 </resources>
